@@ -11,4 +11,3 @@ app.use('/user', user);
 app.use((error, request, response, next) => response.send(error.message));
 
 module.exports = app;
-
