@@ -20,5 +20,15 @@ const createUserDB = async (name, surname, email, pwd) => {
     }
 }
 
+const getUserByEmail = async (email) => {
+    const client = await pool.connect();
 
-module.exports = { createUserDB }
+    const sql = `
+    SELECT * FROM users
+    WHERE email = $1`;
+    const gettingSql = (await client.query(sql, [email])).rows;
+
+    return gettingSql;
+}
+
+module.exports = { createUserDB, getUserByEmail }
