@@ -7,4 +7,4 @@ const createToken = (user) => {
     return jwt.sign(dataStoredInToken, secret);
 };
 
-//module.exports = { createToken }
+module.exports = { createToken }
