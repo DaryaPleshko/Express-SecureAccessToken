@@ -20,7 +20,7 @@ route.post('/authen', async (request, response) => {
     const { email, pwd } = request.body;
     const data = await userAuthentication(email, pwd);
 
-    const token = createToken(data)
+    const token = createToken(data);
 
     response.setHeader('authorization', [token]);
 
