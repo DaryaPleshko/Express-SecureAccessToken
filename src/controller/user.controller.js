@@ -23,7 +23,7 @@ route.post('/authen', async (request, response) => {
     const token = createToken(data);
 
     response.setHeader('authorization', [token]);
-
+                      
     buildResponse(response, 200, data);
   } catch (error) {
     buildResponse(response, 404, error.message);
