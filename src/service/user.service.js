@@ -21,4 +21,4 @@ const userAuthentication = async (email, pwd) => {
   return findEmail;
 };
 
-module.exports = { createUser, userAuthentication };
+module.exports = { createUser, userAuthentication };       
