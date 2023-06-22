@@ -3,7 +3,7 @@ const { createUserDB, getUserByEmail } = require('../repository/user.repository'
 
 const salt = 2;
 
-const createUser = async (name, surname, email, pwd) => {         
+const createUser = async (name, surname, email, pwd) => {             
   const findEmail = await getUserByEmail(email);
   if (findEmail.length) throw new Error('The user already exists');
   const hashPwd = await bcrypt.hash(pwd, salt);
